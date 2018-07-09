@@ -1,0 +1,11 @@
+User-agent:*
+Allow:/
+Disallow:/images/
+Disallow:/cgi-bin/
+Disallow:/include/
+Disallow:/libs/
+Disallow:/admincp/
+Disallow:/media/
+Disallow:/modules/
+Disallow:/components/
+Disallow:/js/

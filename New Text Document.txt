@@ -1,0 +1,5 @@
+
+Database:	thaua_banhang
+Host:	localhost
+Username:	thaua_banhang
+Password:	LZ0JwCav

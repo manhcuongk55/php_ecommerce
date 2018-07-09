@@ -1,0 +1,240 @@
+<?php
+//$this->getFullURL();
+if(!isset($_SESSION['CUR_MENU']))
+	$_SESSION['CUR_MENU']='';
+if(!isset($_SESSION['CUR_MENU']))
+	$_SESSION['CUR_MENU']='';
+if(isset($_GET['cur_menu']))
+	$_SESSION['CUR_MENU']=(int)$_GET['cur_menu'];
+if(!isset($_SESSION['CUR_CAT']))
+	$_SESSION['CUR_CAT']='8';
+if(isset($_GET['cpar']))
+	$_SESSION['CUR_CAT']=(int)$_GET['cpar'];
+	
+$conf = new CLS_CONFIG();
+$conf->load_config();
+?>
+<!DOCTYPE html>
+<html lang='vi' xml:lang='vi' xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="robots" content="index, follow" >
+		<meta name="author" content='<?php echo $conf->CompanyName;?>' >
+		<meta name="keywords" content='<?php echo $conf->Meta_keyword;?>' >
+		<meta name="description" content='<?php echo $conf->Meta_descript;?>' >
+		<meta name="DC.title" content="Muathu7.vn Kênh bán hàng online rẻ nhất Hà Nội" >
+		<META NAME="DC.creator" content="Mr Tuyền, Mr Phúc">
+		<META NAME="DC.type" scheme="DCMIType" content="text"> 
+		<meta name="DC.language" scheme="RFC1766" content="vi">
+		<META NAME="DC.date" scheme="W3CDTF" content="2012-11-10"> 
+		<META NAME="DC.format" scheme="IMT" content="text/html"> 
+		<meta name="DC.identifier" content="/meta-tags/dublin/">
+		<meta name="DC.source" content="/meta-tags/">
+		<meta name="geo.region" content="VN-64" >
+		<meta name="geo.placename" content="H&agrave; Nội" >
+		<meta name="geo.position" content="20.9876;105.7973" >
+		<meta name="ICBM" content="20.9876, 105.7973" >
+		<meta name="alexaVerifyID" content="S95bdU2EC26P4hpeORb_yim5Wuc" >
+		<meta name="msvalidate.01" content="D7AFAB199353195C18BA43F452CBBCCC" />
+		<meta name="msvalidate.01" content="D7AFAB199353195C18BA43F452CBBCCC" />
+		<title><?php echo $conf->Title;?></title>
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="shortcut icon" href="images/igf_logo.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" href="images/igf_logo.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/igf_logo.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/igf_logo.ico" type="image/x-icon">
+		<link rel="author" href="https://plus.google.com/104865876192816973878/posts?hl=vi"/>
+		<link href="<?php echo ROOTHOST.THIS_TEM_PATH; ?>css/add.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo ROOTHOST.THIS_TEM_PATH; ?>css/gf-style.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo ROOTHOST.THIS_TEM_PATH; ?>css/module.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo ROOTHOST;?>css/orbit-1.2.3.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo ROOTHOST.THIS_TEM_PATH; ?>jquery.lightbox-0.5.css" media="screen" />
+		<script type="text/javascript" src='<?php echo ROOTHOST;?>js/jquery-1.8.2.min.php'></script>
+		<script type="text/javascript" src='<?php echo ROOTHOST;?>js/jquery-ui-1.8.24.custom.min.php'></script>
+		<script type="text/javascript" src="<?php echo ROOTHOST.THIS_TEM_PATH; ?>js/gf-script.php"></script>
+		<script type="text/javascript" src="<?php echo ROOTHOST.THIS_TEM_PATH; ?>jquery.lightbox-0.5.php"></script>
+		<script type="text/javascript" src="<?php echo ROOTHOST; ?>js/gfscript.php"></script>
+		<script type="text/javascript"  src='<?php echo ROOTHOST;?>js/main.php'></script>
+		<script type="text/javascript"  src='<?php echo ROOTHOST;?>js/jquery.orbit-1.2.3.php'></script>
+		<script type="text/javascript"  src='<?php echo ROOTHOST;?>js/jquery.orbit-1.2.3.min.php'></script>
+		<script type='text/javascript'>
+		var s_item_count=-1;
+		var s_width=1280;
+		window.requestAnimFrame = (function(){
+		  return  window.requestAnimationFrame       ||
+				  window.webkitRequestAnimationFrame ||
+				  window.mozRequestAnimationFrame    ||
+				  window.oRequestAnimationFrame      ||
+				  window.msRequestAnimationFrame     ||
+				  function(/* function */ callback, /* DOMElement */ element){
+					window.setTimeout(callback, 5000);
+				  };
+		})();
+		$(document).ready(function(){
+			$('#txt_keyword').focus(function(){
+				if($(this).val()=='Từ khóa')
+					$(this).val('');
+			});
+			$('#txt_keyword').blur(function(){
+				if($(this).val()=='')
+					$(this).val('Từ khóa');
+			});
+			rezise_map();
+			$(window).resize(function() {
+				rezise_map();
+			});
+			/*----slide--------*/
+			//slide_run();
+			$('#slide_thumb a').click(function(){
+				s_item_count=eval($(this).attr('id'))-1;
+				slide(s_item_count);
+				$('#slide_thumb a').removeClass('active');
+				$(this).addClass("active");
+			});
+		});
+		function rezise_map(){
+			var ww=$('body').width();
+			if(ww>=1280){
+				s_width=1280;
+				$('#slide_wapper').css({'width':1280+'px','height':455+'px'});
+				$('.wapper').css('width',1280+'px');
+				$('#slide_wapper .item').css('width',1280+'px');
+				$('#gf-navitor').css('width',1280+'px');
+				$('#frontpage .top2 .item').css('width',640+'px');
+				slide(s_item_count);
+			}else{
+				s_width=960;
+				$('.wapper').css('width',960+'px');
+				$('#gf-navitor').css('width',960+'px');
+				$('#frontpage .top2 .item').css('width',425+'px');
+				$('#slide_wapper').css({'width':960+'px','height':340+'px'});
+				$('#slide_wapper .item').css('width',960+'px');
+				slide(s_item_count);
+			}
+		}
+		function slide_run(){
+			s_item_count++;
+			if(s_item_count>5) s_item_count=0;
+			slide(s_item_count);
+			requestAnimFrame(slide_run);
+		};
+		function slide(s_item_count){
+			left=s_item_count*s_width;
+			if(left>0)left=-left;
+			$('#slide').css('left',left+'px');
+		}
+		</script>
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-36961780-1']);
+		  _gaq.push(['_setDomainName', 'muathu7.vn']);
+		  _gaq.push(['_setAllowLinker', true]);
+		  _gaq.push(['_trackPageview']);
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+</head>
+<body>
+<div style="width:100%;">
+	<div id="gf_tab">
+    	<div id="search" >
+        	<form method="post" action='<?php echo ROOTHOST;?>tim-kiem-san-pham.html' >
+        		<span style='height:37px; line-height:37px; float:left; font-weight:bold;color:#fff;'>Tìm kiếm: &nbsp;</span>
+        		<div class='search_panel'>
+        			<input name='txt_cat' id='txt_cat' value='Tất cả các nhóm' type='text'/>
+        			<input type="text" class='keyword' name="txt_keyword" id="txt_keyword" value='Từ khóa' autocomplete='off' />
+        			<input type="submit" id="frm_submit" value='&nbsp;'/>
+        		</div>
+        	</form>
+	   </div>
+    </div>
+	<div id="gf_right">
+        <div class="comments">
+            
+        </div>
+        <div class="support_online">
+            	<div class="title"> Hỗ trợ trực tuyến </div>
+            	<div class="hotline">
+            		<ul class="support">
+            			<li><a href="ymsgr:sendim?muathu7_01"><img alt="Hỗ trợ bán hàng 1" src="http://opi.yahoo.com/online?u=muathu7_01&amp;m=g&amp;t=">&nbsp;&nbsp;Mr.Tuyền</a></li>
+            			<li><a href="ymsgr:sendim?muathu7_02"><img alt="Hỗ trợ bán hàng 2" src="http://opi.yahoo.com/online?u=muathu7_02&amp;m=g&amp;t=">&nbsp;&nbsp;Mr.Bách</a></li>
+                        <li><a href="ymsgr:sendim?muathu7_02"><img alt="Hỗ trợ bán hàng 2" src="http://opi.yahoo.com/online?u=muathu7_02&amp;m=g&amp;t=">&nbsp;&nbsp;Mr.Thịnh</a></li>
+                        <li><a href="ymsgr:sendim?muathu7_02"><img alt="Hỗ trợ bán hàng 2" src="http://opi.yahoo.com/online?u=muathu7_02&amp;m=g&amp;t=">&nbsp;&nbsp;Mrs.Lương</a></li>
+                        <li><a href="ymsgr:sendim?muathu7_02"><img alt="Hỗ trợ bán hàng 2" src="http://opi.yahoo.com/online?u=muathu7_02&amp;m=g&amp;t=">&nbsp;&nbsp;Mrs.Thủy</a></li>
+            		</ul>
+            	</div>
+        </div>
+    </div>
+</div>
+<div id="gf_wrapper">
+	<div id="main">
+		<div id="contents">
+			<div id="gf_header">
+				
+			</div>
+			<div id="gf_navigation">
+                
+				<div id="navitor">
+                    <div class="logo">
+                        <div class="logo1"><img src="<?php echo ROOTHOST;?>images/logo.png" width="168"  height="167"/></div>
+                    </div>
+                    <div class="nav">
+                        <ul class="home"><li><a href='<?php echo ROOTHOST.'trang-chu.html';?>'>TRANG CHỦ</a></li></ul>
+                   	    <?php $this->loadModule("navitor");?>
+                    </div>
+				
+				</div>
+				<div class="service">
+					<div class="info_comp">
+                        <?php $this->loadModule("user3");?>
+					</div>
+					<div class="slide">
+                        <?php require_once MOD_PATH.'mod_slide/layout.php';?>
+                        
+                    </div>
+				</div>
+			</div>
+            <div class="gf_products">
+                <?php $this->loadComponent();?>
+            </div>
+            
+		
+		</div>
+		<div id="hot_pro">
+            <h2 class="title_hot">Sản phẩm hot</h2>
+           <?php require_once COM_PATH.'com_products/tem/hot.php';?>
+		</div>
+        <div class="footer" style="clear: both;">
+            <div class="top_footer">
+                <div class="visit_counter">
+                    <?php $this->loadModule('user2');?>
+                </div>
+                <div class="doitac">
+                    <div class="lienket">
+                        <?php $this->loadModule('user4');?>
+                      
+                    </div> 
+                    <div class="custumer">
+                        <?php $this->loadModule('user7');?>
+                    </div>
+                    <div class="address">
+                        <?php $this->loadModule('user8');?>
+                    </div>
+                </div>
+                <div class="info_com">
+                    <address>
+                        <?php $this->loadModule('footer');?>
+                    </address>
+                </div>
+            </div>
+            
+        </div>
+	</div>	
+</div>
+
+</body>
+</html>

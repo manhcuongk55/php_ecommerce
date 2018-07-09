@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<position>
+		<option>header</option>
+		<option>navitor</option>
+		<option>footer</option>
+		<option>top</option>
+		<option>bottom</option>
+		<option>banner</option>
+		<option>path</option>
+		<option>left</option>
+		<option>right</option>
+		<option>user1</option>
+		<option>user2</option>
+		<option>user3</option>
+		<option>user4</option>
+		<option>user5</option>
+		<option>user6</option>
+		<option>user7</option>
+		<option>user8</option>
+		<option>user9</option>
+	</position>
+</root>

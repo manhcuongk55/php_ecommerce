@@ -1,0 +1,45 @@
+RewriteEngine On
+#RewriteCond %{HTTP_REFERER} !^$
+#RewriteCond %{HTTP_REFERER} !^http://(www.)?igf.com.vn/ [nc]
+#RewriteRule .*.(gif|jpg|png)$ http://igf.com.vn/images/igf_logo.PNG [nc]
+
+RewriteRule ^(.*)-nb([0-9]*)(.*).html index.php?com=contents&viewtype=block&id=$2&scode=$3
+
+RewriteRule ^(.*)-post([0-9]*)(.*).html index.php?com=contents&viewtype=article&id=$2&scode=$3
+
+RewriteRule ^(.*)-np([0-9]*)-p([0-9]*)(.*).html index.php?com=products&viewtype=block&id=$2&cpar=$3&scode=$4
+
+RewriteRule ^(.*)/(.*)-sp([0-9]*)(.*).html index.php?com=products&viewtype=detail&id=$3&scode=$5
+
+RewriteRule ^tim-kiem-san-pham.html index.php?com=products&viewtype=search
+
+RewriteRule ^them-gio-hang-sp([0-9]*).html index.php?com=members&viewtype=addcart&id=$
+
+RewriteRule ^del-cart-sp([0-9]*).html index.php?com=members&viewtype=delcart&id=$1
+
+RewriteRule ^trang-chu.html index.php?cur_menu=1
+
+RewriteRule ^san-pham.html index.php?com=mart&cur_menu=25
+
+RewriteRule ^dat-hang(.*).html index.php?com=members&viewtype=order&scode=$
+
+RewriteRule ^success(.*).html index.php?com=members&viewtype=success
+
+RewriteRule ^dang-ky-gift.html index.php?com=members&viewtype=regis-gift
+
+RewriteRule ^dang-ky(.*).html index.php?com=members&viewtype=register&scode=$1
+
+RewriteRule ^dang-xuat.html index.php?com=members&viewtype=logout
+
+RewriteRule ^ca-nhan.html index.php?com=members&viewtype=private
+
+RewriteRule ^thong-tin-ca-nhan.html index.php?com=members&viewtype=info
+
+RewriteRule ^danh-sach-don-hang.html index.php?com=members&viewtype=orderlist
+
+RewriteRule ^danh-sach-san-pham.html index.php?com=members&viewtype=prolist
+
+RewriteRule ^danh-sach-thanh-viet.html index.php?com=members&viewtype=memlist
+
+RewriteRule ^lien-he.html index.php?com=contact
+

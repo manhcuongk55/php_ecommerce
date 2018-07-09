@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?><playlist version="1" xmlns="http://xspf.org/ns/0/">
+
+<title>Video khai giảng tuần tư vấn & học thử miễn phí khóa lập trình chuyên sâu Java & Oracle, lập trình web toàn diện với PHP & MySQL tại IGF</title>
+<info>http://edu.igf.com.vn/</info>
+
+<trackList>
+
+<track>
+<annotation>Video khai giảng tuần tư vấn & học thử miễn phí</annotation>
+<location>http://edu.igf.com.vn/media/IGF-dinh-huong.mp3</location>
+</track>
+
+</trackList>
+</playlist>

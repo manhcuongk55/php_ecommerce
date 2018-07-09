@@ -1,0 +1,9 @@
+#<Files ~ '\.(php|php3|php4|php5|phtml|pl|cgi|aspx|asp|xml)$'>                                                                              
+#     order deny,allow                                                                                                            
+#     deny from all                                                                                                               
+# </Files>
+deny from all
+<Files ~ "\.(gif|GIF|jpe?g|JPE?G|png|PNG|swf|SWF|ICO|ico)$">
+order deny,allow
+allow from all
+</Files>

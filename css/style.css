@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+div.blog{
+	width:200px;
+	height:150px;
+	border:solid 1px #666;
+}
+div.title{
+	width:auto;
+	height:20px;
+	background:#999;
+}
+div.img{
+	width:100px;
+	height:100px;
+	float:left;
+	background:#CCC;
+}
